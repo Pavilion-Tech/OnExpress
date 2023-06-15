@@ -7,7 +7,7 @@ class DefaultForm extends StatelessWidget {
   DefaultForm({
     required this.hint,
     this.prefix,
-    this.type = TextInputType.text,
+    this.type,
     this.validator,
     this.readOnly = false,
     this.maxLines = 1,
@@ -24,7 +24,7 @@ class DefaultForm extends StatelessWidget {
   Widget? prefix;
   Widget? suffix;
   bool obscureText;
-  TextInputType type;
+  TextInputType? type;
   FormFieldValidator? validator;
   int? textLength;
   bool? digitsOnly;
@@ -54,13 +54,16 @@ class DefaultForm extends StatelessWidget {
       decoration: InputDecoration(
         border:OutlineInputBorder(borderRadius: BorderRadius.circular(10),borderSide: BorderSide(color: Colors.black)),
         hintText: hint,
-        suffixIcon: suffix,
+        suffixIcon: suffix !=null ? Padding(
+          padding: const EdgeInsets.all(14.0),
+          child: suffix,
+        ):null,
         hintStyle: TextStyle(color: Colors.grey.shade500,fontSize: 15),
-        prefixIcon: Padding(
+        prefixIcon:prefix !=null ? Padding(
           padding: const EdgeInsets.all(14.0),
           child: prefix,
-        ),
-        isDense: true,
+        ):null,
+        isDense: false,
       ),
     );
   }

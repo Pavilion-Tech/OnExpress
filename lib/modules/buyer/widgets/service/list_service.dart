@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:on_express/modules/vendor/menu/menu_screens/service/vendor_service_screen.dart';
 import 'package:on_express/shared/components/components.dart';
 import 'package:on_express/shared/images/images.dart';
 import 'package:on_express/shared/styles/colors.dart';
@@ -6,30 +7,33 @@ import 'package:on_express/shared/styles/colors.dart';
 import '../../request_service/request_service_screen.dart';
 
 class ListService extends StatelessWidget {
-  ListService({this.shrinkWrap = false});
+  ListService({this.shrinkWrap = false,this.isProvider = false});
 
   bool shrinkWrap;
+  bool isProvider;
 
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-        itemBuilder: (c,i)=>ServiceItem(),
+        itemBuilder: (c,i)=>ServiceItem(isProvider: isProvider),
         shrinkWrap: shrinkWrap,
         physics: shrinkWrap?const NeverScrollableScrollPhysics():null,
         separatorBuilder: (c,i)=>const SizedBox(height: 20,),
-        itemCount: 4
+        itemCount: 10
     );
   }
 }
 
 class ServiceItem extends StatelessWidget {
-  const ServiceItem({Key? key}) : super(key: key);
+  ServiceItem({this.isProvider = false});
+  bool isProvider;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        navigateTo(context, RequestServiceScreen());
+        if(isProvider)navigateTo(context, VendorServiceScreen());
+        else navigateTo(context, RequestServiceScreen());
       },
       child: Container(
         height: 122,width: double.infinity,
@@ -58,25 +62,23 @@ class ServiceItem extends StatelessWidget {
                       maxLines: 1,
                       style: TextStyle(color: Colors.grey,fontSize: 10,fontWeight: FontWeight.w500),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Text(
-                              'Trash Collecting',
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 2,
-                              style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w500),
-                            ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'Trash Collecting',
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                            style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w500),
                           ),
-                          InkWell(
-                              onTap: (){},
-                              child: Image.asset(Images.favYes,width: 11,),
-                          ),
-                          const SizedBox(width: 20,),
-                        ],
-                      ),
+                        ),
+                        if(!isProvider)
+                        InkWell(
+                            onTap: (){},
+                            child: Image.asset(Images.favYes,width: 11,),
+                        ),
+                        const SizedBox(width: 20,),
+                      ],
                     ),
                     Text(
                       '20\$/h',

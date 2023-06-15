@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:on_express/shared/images/images.dart';
 import 'package:on_express/shared/styles/colors.dart';
@@ -9,7 +10,8 @@ class NotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultScaffold(
-        titleAppbar: 'Notifications',
+        titleAppbar: tr('notifications'),
+        haveNotification: false,
         child: ListView.separated(
             itemBuilder: (c,i)=>NotificationItem(),
             separatorBuilder: (c,i)=>const SizedBox(height: 20,),

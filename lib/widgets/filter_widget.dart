@@ -32,7 +32,7 @@ class _FilterWidgetState extends State<FilterWidget> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 70,left: 30,right: 30,bottom: 30),
+          padding: const EdgeInsets.only(top: 50,left: 30,right: 30,bottom: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -44,7 +44,7 @@ class _FilterWidgetState extends State<FilterWidget> {
                   group: null
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical:20),
+                padding: const EdgeInsets.symmetric(vertical:10),
                 child: filter(
                     title: tr('location'),
                     currentInd: currentLocation,
@@ -138,7 +138,7 @@ class _FilterWidgetState extends State<FilterWidget> {
           title,
           style: TextStyle(color: defaultColorFour,fontSize: 19,fontWeight: FontWeight.w600),
         ),
-        const SizedBox(height: 10,),
+        const SizedBox(height: 5,),
         itemBuilder(
             title: titleRadio1,
             isSelected: currentInd == -1,

@@ -1,8 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:on_express/shared/components/components.dart';
 import 'package:on_express/shared/styles/colors.dart';
 import 'package:on_express/widgets/default_button.dart';
 
 import '../../../../shared/images/images.dart';
+import '../../menu/menu_screens/address/add_edit_address_screen.dart';
 
 class ChooseAddress extends StatefulWidget {
   const ChooseAddress({Key? key}) : super(key: key);
@@ -22,7 +25,7 @@ class _ChooseAddressState extends State<ChooseAddress> {
         Padding(
           padding: const EdgeInsets.only(top: 40,bottom: 20),
           child: Text(
-            'Address',
+            tr('address'),
             style: TextStyle(fontWeight: FontWeight.w500,fontSize: 22,color: Colors.grey.shade700),
           ),
         ),
@@ -36,12 +39,14 @@ class _ChooseAddressState extends State<ChooseAddress> {
         const SizedBox(height: 15,),
         Center(
           child:DefaultButton(
-              text: 'Add New Address',
+              text: tr('add_new_address'),
               width: 159,
               height: 33,
               radius: 9,
               textSize: 11,
-              onTap: (){}
+              onTap: (){
+                navigateTo(context, AddEditAddressScreen());
+              }
           ),
         ),
       ],

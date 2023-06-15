@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:on_express/shared/images/images.dart';
 import 'package:on_express/widgets/default_scaffold.dart';
@@ -22,7 +23,17 @@ class HomeScreen extends StatelessWidget {
         leadingWidth: 150,
         leading: Padding(
           padding: const EdgeInsetsDirectional.only(start: 20),
-          child: Image.asset(Images.service,width: 150,),
+          child: Row(
+            children: [
+              Text(
+                'OnExpress',
+
+                style: TextStyle(fontWeight: FontWeight.w700,fontSize: 18.5,color: Colors.black,height: -.1),
+              ),
+              const SizedBox(width: 10,),
+              Image.asset(Images.appLogo,width: 35,),
+            ],
+          ),
         ),
         actions: [
           IconButton(

@@ -1,9 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:on_express/shared/components/components.dart';
 import 'package:on_express/shared/images/images.dart';
 
 import '../../../../shared/styles/colors.dart';
 import '../../../../widgets/default_button.dart';
+import '../../menu/menu_screens/chat_screen.dart';
 import '../../order/track_screen.dart';
 
 class OrderHistoryWidget extends StatelessWidget {
@@ -39,7 +41,7 @@ class OrderHistoryItem extends StatelessWidget {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -65,7 +67,9 @@ class OrderHistoryItem extends StatelessWidget {
                         ),
                       ),
                       InkWell(
-                        onTap: (){},
+                        onTap: (){
+                          navigateTo(context, ChatScreen());
+                        },
                         child: Container(
                             width: 40,height: 40,
                             decoration: BoxDecoration(shape: BoxShape.circle,color: defaultColor.withOpacity(.3)),
@@ -94,7 +98,7 @@ class OrderHistoryItem extends StatelessWidget {
                         onTap: (){
                           navigateTo(context, TrackScreen());
                         },
-                        text: 'Track',
+                        text: tr('track'),
                         height: 21,
                         width: 72,
                         textSize: 9,

@@ -2,7 +2,9 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:on_express/modules/buyer/store/store_screen.dart';
 import 'package:on_express/widgets/story/user_info.dart';
+import '../../shared/components/components.dart';
 import '../../shared/components/constants.dart';
 import '../image_net.dart';
 import 'animated_bar.dart';
@@ -84,12 +86,17 @@ class _StoryWidgetState extends State<StoryWidget>
               right: 10.0,
               child: Column(
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 1.5,
-                      vertical: 10.0,
+                  InkWell(
+                    onTap: (){
+                      navigateTo(context,StoreScreen());
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 1.5,
+                        vertical: 10.0,
+                      ),
+                      child: UserInfo(user:story[0].user),
                     ),
-                    child: UserInfo(user:story[0].user),
                   ),
                   Row(
                     children: widget.stories

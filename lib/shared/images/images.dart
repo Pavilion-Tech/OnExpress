@@ -13,7 +13,7 @@ class Images{
   static const String search = 'assets/images/search.png';
   static const String orderHistory = 'assets/images/order_history.png';
   static const String person = 'assets/images/person.png';
-  static const String service = 'assets/images/service.png';
+  static const String appLogo = 'assets/images/app_logo.png';
   static const String cleaning = 'assets/images/cleaning.png';
   static const String trash = 'assets/images/trash.png';
   static const String location = 'assets/images/location.png';
@@ -46,6 +46,31 @@ class Images{
   static const String car = 'assets/images/car.png';
   static const String phone = 'assets/images/phone.png';
   static const String whats = 'assets/images/whats.png';
+  static const String ar = 'assets/images/ar.png';
+  static const String en = 'assets/images/en.png';
+  static const String showPassword = 'assets/images/show_password.png';
+  static const String verification = 'assets/images/verification.png';
+  static const String notificationYes = 'assets/images/notification_yes.png';
+  static const String notificationNo = 'assets/images/notification_no.png';
+  static const String addYes = 'assets/images/add_yes.png';
+  static const String addNo = 'assets/images/add_no.png';
+  static const String camera = 'assets/images/camera.png';
+  static const String iphone = 'assets/images/iphone.png';
+  static const String onGoing = 'assets/images/on_going.png';
+  static const String processing = 'assets/images/processing.png';
+  static const String completed = 'assets/images/completed.png';
+  static const String canceled = 'assets/images/canceled.png';
+  static const String phone2 = 'assets/images/phone2.png';
+  static const String gmail = 'assets/images/gmail.png';
+  static const String gmail2 = 'assets/images/gmail2.png';
+  static const String whatApp = 'assets/images/whatApp.png';
+  static const String facebook = 'assets/images/facebook.png';
+  static const String twitter = 'assets/images/twitter.png';
+  static const String instagram = 'assets/images/instagram.png';
+  static const String message = 'assets/images/message.png';
+  static const String google = 'assets/images/google.png';
+  static const String apple = 'assets/images/apple.png';
+  static const String pavilion = 'assets/images/pavilion.png';
 
 
 

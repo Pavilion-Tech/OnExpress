@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:on_express/layout/buyer/buyer_layout.dart';
 import 'package:on_express/shared/components/components.dart';
+import 'package:on_express/shared/components/constants.dart';
 import 'package:on_express/shared/images/images.dart';
 import 'package:on_express/widgets/default_button.dart';
 
@@ -32,22 +34,22 @@ class SuccessDialog extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(height: 1.5),
                 TextSpan(
-                  text: 'Successful ',
+                  text: '${myLocale == 'ar'?tr('bookings'):tr('successful')} ',
                   style: TextStyle(fontSize: 23),
                   children: [
                     TextSpan(
-                      text: 'Bookings ',
+                      text: '${myLocale == 'ar'?tr('successful'):tr('bookings')} ',
                       style: TextStyle(fontSize: 23,color: defaultColor,fontWeight: FontWeight.w600),
                     ),
                     TextSpan(
-                      text: 'You Will Be Notified Soon',
+                      text: tr('you_will_notified'),
                       style: TextStyle(fontSize: 23),
                     ),
                   ]
                 )
               ),
               DefaultButton(
-                  text: 'Homepage',
+                  text: tr('homepage'),
                   onTap: (){
                     Navigator.pop(context);
                     navigateAndFinish(context, BuyerLayout());

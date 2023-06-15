@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:on_express/widgets/default_scaffold.dart';
 
@@ -11,7 +12,7 @@ class OrderHistoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultScaffold(
       haveArrow: false,
-        titleAppbar: 'My Bookings',
+        titleAppbar: tr('my_bookings'),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

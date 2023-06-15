@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:on_express/modules/buyer/widgets/service/list_service.dart';
 import 'package:on_express/shared/components/components.dart';
@@ -14,7 +15,7 @@ class AddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultScaffold(
-        titleAppbar: 'Manage Addresses',
+        titleAppbar: tr('manage_addresses'),
         child: Column(
           children: [
             Expanded(
@@ -26,7 +27,7 @@ class AddressScreen extends StatelessWidget {
             ),
             Center(
               child:DefaultButton(
-                  text: 'Add New Address',
+                  text: tr('add_new_address'),
                   width: 159,
                   height: 33,
                   radius: 9,

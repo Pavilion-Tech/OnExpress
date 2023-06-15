@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:on_express/shared/images/images.dart';
 import 'package:on_express/shared/styles/colors.dart';
 
 class TrackScreen extends StatelessWidget {
-  const TrackScreen({Key? key}) : super(key: key);
+  TrackScreen({Key? key}) : super(key: key);
+
+  CameraPosition initialCameraPosition = CameraPosition(
+      target: LatLng(25.2048,55.2708),zoom: 14
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +23,11 @@ class TrackScreen extends StatelessWidget {
       ),
       body: Stack(
         children: [
+          GoogleMap(
+              initialCameraPosition: initialCameraPosition,
+              zoomControlsEnabled: false,
+              onTap: (latLng){}
+          ),
           Align(
             alignment: AlignmentDirectional.bottomCenter,
             child: Container(
@@ -31,7 +41,7 @@ class TrackScreen extends StatelessWidget {
               clipBehavior: Clip.antiAliasWithSaveLayer,
               child: Stack(
                 children: [
-                  Container(color: defaultColor),
+                  Container(color: defaultColor,),
                   Container(
                     decoration: BoxDecoration(
                       color: HexColor('#FDFDFD'),
@@ -39,7 +49,7 @@ class TrackScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 30.0,horizontal: 40),
+                    padding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 40),
                     child: Column(
                       children: [
                         Text(

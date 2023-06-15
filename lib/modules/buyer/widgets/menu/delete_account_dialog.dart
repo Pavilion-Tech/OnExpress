@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:on_express/layout/buyer/buyer_layout.dart';
 import 'package:on_express/shared/components/components.dart';
@@ -30,7 +31,7 @@ class DeleteAccountDialog extends StatelessWidget {
               Image.asset(Images.deleteAccountDialog,width: 233,),
               const SizedBox(height: 60,),
               DefaultButton(
-                  text: 'Delete Now',
+                  text: tr('delete_now'),
                   onTap: (){
                     Navigator.pop(context);
                     navigateAndFinish(context, SplashScreen());
@@ -41,7 +42,7 @@ class DeleteAccountDialog extends StatelessWidget {
                     Navigator.pop(context);
                   },
                   child: Text(
-                    'Cancel',
+                    tr('cancel'),
                     style: TextStyle(color: defaultColor),
                   )
               )

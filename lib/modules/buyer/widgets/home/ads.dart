@@ -36,7 +36,7 @@ class _AdsState extends State<Ads> {
                 _index = page;
               });
             },
-            height: 126,
+            height: 140,
             initialPage: 0,
             enableInfiniteScroll: true,
             reverse: false,
@@ -46,6 +46,7 @@ class _AdsState extends State<Ads> {
             autoPlayCurve: Curves.fastOutSlowIn,
             scrollDirection: Axis.horizontal,
             viewportFraction: 1,
+            enlargeCenterPage: true
           ),
         ),
         Padding(
@@ -74,7 +75,7 @@ class AdsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 126,width: double.infinity,
+      height: 140,width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadiusDirectional.circular(20),
         color: defaultColor
@@ -91,13 +92,10 @@ class AdsItem extends StatelessWidget {
                   maxLines: 2,
                   style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: 19),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10.0),
-                  child: Text(
-                    'Tempora ad quia praesentium unde doloribus amet. ',
-                    maxLines: 2,
-                    style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 11),
-                  ),
+                Text(
+                  'Tempora ad quia praesentium unde doloribus amet. ',
+                  maxLines: 2,
+                  style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 11),
                 ),
                 Text(
                   '+201122711137',

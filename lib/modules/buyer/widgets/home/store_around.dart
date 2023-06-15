@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:on_express/shared/components/components.dart';
 import 'package:on_express/shared/components/constants.dart';
@@ -17,14 +18,14 @@ class StoreAround extends StatelessWidget {
         Row(
           children: [
             Text(
-              'Stores Around You',
+              tr('store_around'),
               style: TextStyle(fontSize: 11),
             ),
             const Spacer(),
             InkWell(
               onTap: ()=>navigateTo(context, StoreAroundScreen()),
               child: Text(
-                'See All',
+                tr('see_all'),
                 style: TextStyle(fontSize: 11,fontWeight: FontWeight.w600),
               ),
             ),

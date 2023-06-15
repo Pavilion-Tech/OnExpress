@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:on_express/modules/buyer/menu/menu_screens/address/add_edit_address_screen.dart';
 import 'package:on_express/shared/components/components.dart';
@@ -17,7 +18,7 @@ class NoBookings extends StatelessWidget {
         Image.asset(Images.noBookings,),
         const SizedBox(height: 15,),
         Text(
-          'You got no Bookings yet ',
+          tr('no_bookings'),
           textAlign: TextAlign.center,
           style: TextStyle(
               fontSize: 16,color: defaultTextColor

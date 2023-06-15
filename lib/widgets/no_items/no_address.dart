@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:on_express/modules/buyer/menu/menu_screens/address/add_edit_address_screen.dart';
 import 'package:on_express/shared/components/components.dart';
@@ -18,7 +19,7 @@ class NoAddress extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 15.0),
           child: Text(
-            'You Do Not Have Any Addresses Currently,Please Add a New Address.',
+            tr('no_address'),
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 16,color: defaultTextColor
@@ -29,7 +30,7 @@ class NoAddress extends StatelessWidget {
           onTap: (){
             navigateTo(context, AddEditAddressScreen());
           },
-          text: 'Add New Address',
+          text: tr('add_new_address'),
           width: size!.width*.8,
         )
       ],

@@ -1,4 +1,5 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:on_express/shared/styles/colors.dart';
 
@@ -17,9 +18,9 @@ class _OrderFilterState extends State<OrderFilter> {
   bool showList = false;
 
   List<String> filters = [
-    'Cancel',
-    'Up Coming',
-    'Completed',
+    'canceled',
+    'up_coming',
+    'completed',
   ];
 
 
@@ -33,8 +34,9 @@ class _OrderFilterState extends State<OrderFilter> {
         borderRadius: BorderRadiusDirectional.circular(10),
         border: Border.all(color: defaultColor)
       ),
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.symmetric(horizontal: 10),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           InkWell(
             onTap: (){
@@ -56,7 +58,7 @@ class _OrderFilterState extends State<OrderFilter> {
                 Expanded(
                     child:ConditionalBuilder(
                       condition: filter!=null,
-                      fallback: (c)=>Text('Filter',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 16),),
+                      fallback: (c)=>Text(tr('filter'),style: TextStyle(fontWeight: FontWeight.w500,fontSize: 16),),
                       builder: (c)=>Text(filter!,style: TextStyle(fontWeight: FontWeight.w500,fontSize: 16),),
                     )
                 ),
@@ -66,7 +68,7 @@ class _OrderFilterState extends State<OrderFilter> {
           ),
           if(showList)
           Padding(
-            padding: const EdgeInsets.only(top: 10.0),
+            padding: const EdgeInsets.only(top: 5.0),
             child: ListView.separated(
                 itemBuilder: (c,i)=>InkWell(
                   onTap: (){
@@ -86,10 +88,10 @@ class _OrderFilterState extends State<OrderFilter> {
                       });
                     }
                   },
-                    child: Text(filters[i],style: TextStyle(fontWeight: FontWeight.w500,fontSize: 16),)),
+                    child: Text(tr(filters[i]),style: TextStyle(fontWeight: FontWeight.w500,fontSize: 16),)),
                 shrinkWrap: true,
                 padding: EdgeInsets.zero,
-                separatorBuilder: (c,i)=>const SizedBox(height: 15,),
+                separatorBuilder: (c,i)=>const SizedBox(height: 0,),
                 itemCount: filters.length
             ),
           )

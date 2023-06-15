@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:on_express/modules/buyer/widgets/store/store_details.dart';
 import 'package:on_express/widgets/default_scaffold.dart';
@@ -48,14 +49,16 @@ class StoreScreen extends StatelessWidget {
                     ),
                   ),
                   Category(),
-                  const SizedBox(height: 30),
-                  ListService(shrinkWrap: true),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30.0,bottom: 50),
+                    child: ListService(shrinkWrap: true),
+                  ),
                 ],
               ),
             ),
             DefaultButton(
               onTap: (){},
-              text: 'Special Request',
+              text: tr('special_request'),
             )
           ],
         )

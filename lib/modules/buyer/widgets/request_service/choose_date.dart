@@ -63,7 +63,7 @@ class _ChooseDateState extends State<ChooseDate> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10),
               child: Text(
-                'Date and Time',
+                tr('date_time'),
                 style: TextStyle(fontWeight: FontWeight.w500,fontSize: 22,color: Colors.grey.shade700),
               ),
             ),

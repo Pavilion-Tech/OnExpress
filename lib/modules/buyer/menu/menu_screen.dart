@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:on_express/modules/buyer/widgets/menu/with_sign.dart';
@@ -11,7 +12,7 @@ class MenuScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultScaffold(
         haveArrow: false,
-        titleAppbar: 'My Profile',
+        titleAppbar: tr('my_profile'),
         child: SingleChildScrollView(child: WithSign())
     );
   }

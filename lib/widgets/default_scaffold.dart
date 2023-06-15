@@ -10,19 +10,24 @@ class DefaultScaffold extends StatelessWidget {
     this.appBar,
     this.titleAppbar = '',
     this.haveArrow = true,
-});
+    this.haveNotification = true,
+    this.bottomSheet,
+  });
 
   Widget child;
+  Widget? bottomSheet;
   AppBar? appBar;
   String titleAppbar;
   bool haveArrow;
+  bool haveNotification;
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
       extendBody: true,
-      appBar:appBar ?? defaultAppbar(context: context,title: titleAppbar,haveArrow: haveArrow),
+      appBar:appBar ?? defaultAppbar(context: context,title: titleAppbar,haveArrow: haveArrow,haveNotification: haveNotification),
       body: Stack(
         children: [
           Container(color: defaultColor,),
@@ -35,12 +40,13 @@ class DefaultScaffold extends StatelessWidget {
           SafeArea(
             bottom: false,
               child: Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.symmetric(horizontal: 30.0,vertical: 20),
                 child: child,
               )
           ),
         ],
       ),
+      bottomSheet:bottomSheet ,
     );
   }
 }
