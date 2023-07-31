@@ -27,7 +27,6 @@ class HomeScreen extends StatelessWidget {
             children: [
               Text(
                 'OnExpress',
-
                 style: TextStyle(fontWeight: FontWeight.w700,fontSize: 18.5,color: Colors.black,height: -.1),
               ),
               const SizedBox(width: 10,),
@@ -46,7 +45,7 @@ class HomeScreen extends StatelessWidget {
       ),
         child: SingleChildScrollView(
           child: Column(
-            children: [
+            children:[
               ListStories(),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20.0),
