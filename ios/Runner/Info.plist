@@ -42,6 +42,8 @@
 	<string>This app requires access to Camera for pick profile image or service images or chat image.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>app need access location because show your store to users in around stores</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>app need access location because show your store to users in around stores</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>This app requires read and write access to the photo library for profile image or service images or chat image.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
